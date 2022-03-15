@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+	<div>
+	<div class="container-fluid py-5"></div>
+	<div class="jumbotron text-white text-center jumbotron-image shadow"
+	style="background-image: url(https://pixabay.com/photos/devops-business-process-improvement-3155972/);height: 100%;">
+		<h2 class="mb-4 font-weight-bold text-center">
+			AWADS
+		</h2>
+		<p class="mb-4">
+			<br><br><br><br><br><br><br><br><br><br>
+		</p>
+		<a href="{% url 'project' %}"style="text-align: center;"><button class="btn btn-primary text-center font-weight-bold"
+				style="text-align: center;">VIEW PROJECTS</button></a>
+	</div>
+	
+
+	{% for posts in posts%}
+	<a href="">{{post.sitename}}cbakcbah</a>
+	{%endfor%}
+	</div>
+
+
+{% endblock %}

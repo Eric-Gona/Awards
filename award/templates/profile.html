@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+	<span class="float-left container ml-5 mt-3">
+		<a href="#"><button class="btn btn-lg btn-outline-info d-flex">Following<i class="feather-16 mt-1 ml-2" data-feather="activity"></i> + 0
+		</button></a>
+	</span>
+	<div class="container  hvr-float-shadow">
+		<div class="profile-layout text-center">
+			<div>
+				<img src="{{ user.profile.image.url }}" class="rounded-circle border responsive hvr-grow" alt="..."
+				     height="120"
+				     width="120">
+			</div>
+			<h1 class="text-uppercase mt-3 font-weight-bold">{{ user.profile.user }}</h1>
+			<hr style="width: 80px;">
+			<a href="{{ user.email }}"><h4 class="text-body">{{ user.email }}</h4></a>
+			<div>
+				<h6 class="font-weight-bold mt-3">{{ user.profile.bio }}</h6>
+			</div>
+			<div>
+				<a href="{%  url 'edit' %}" style="text-decoration: none;">
+					<button class="btn btn-lg mx-3 mt-4 hvr-float-shadow bg-danger">Edit</button>
+				</a>
+			</div>
+			<span class="text-muted">Last modified: {{ user.profile.updated_at }}</span>
+		</div>
+	</div>
+</div>
+<div class="container mt-5">
+	<h1 class="text-center">PROJECTS</h1>
+	<hr style="width: 80px">
+	{% for project in posts %}
+	{% if project.user == user.profile.user %}
+	<div class="row mt-5 hvr-grow ">
+		<div class="col-md-3">
+			<img src="{{ project.image1.url }}" class="img-thumbnail" width="500">
+		</div>
+		<div class="col-md-9">
+			<p>Project Name: {{ project.sitename }}</p>
+			Description: {{ project.desc }}
+			<p class=""><a href="{{ project.link }}">
+				<button class="btn hvr-bubble-float-bottom bg-primary">LINK</button>
+			</a></p>
+			<p class="text-muted float-right">{{ project.post_date }}</p>
+		</div>
+	</div>
+	<hr>
+	{% endif %}
+	{% endfor %}
+
+</div>
+{% endblock %}

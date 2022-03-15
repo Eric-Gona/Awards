@@ -1,0 +1,58 @@
+{% load bootstrap4 %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>AWADS</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Nunito|Cormorant&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	{% block styles %}
+	{% load bootstrap4 %}
+	{% endblock %}
+
+</head>
+
+<body>
+
+	{% include "navbar.html" %}
+	{% block content %}
+	{%endblock%}
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content p-3">
+				<div class="row">
+					<div class="col-md-6 border-right text-center m-0 ">
+						<div class="modal-header pl-3">
+							<h5 class="modal-title text-muted mx-3">Already have an account?</h5>
+						</div>
+						<div class="modal-body">
+							<a href="/accounts/login/"><button class="btn btn-lg btn-outline-success">Sign
+									In</button></a>
+						</div>
+					</div>
+					<div class="col-md-6 text-center m-0 ">
+						<div class="modal-header">
+							<h5 class="modal-title text-muted mx-5">Need an account?</h5>
+						</div>
+						<div class="modal-body">
+							<a href="/accounts/register/"><button class="btn btn-lg btn-outline-info">Sign
+									Up</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

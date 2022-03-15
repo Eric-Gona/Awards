@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a href="#" class="navbar-brand">AWADS</a>
+
+    {% if user.is_authenticated %}
+        <div class="navbar-nav">
+            <a href="{% url 'index' %}" class="nav-link nav-font text-dark font-weight-bold p-3 my-3" >Home</a>
+            <a href="{% url 'profile' %}" class="nav-link nav-font text-dark font-weight-bold p-3 my-3" >{{ user.profile.user }} Profile</a>
+            <a href="/logout" class="nav-link nav-font text-dark font-weight-bold p-3 my-3 text-danger">Logout</a>
+
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link nav-font text-dark font-weight-bold p-3 my-3" href="/accounts/login/" data-toggle="modal"
+                   data-target="#exampleModalCenter">REGISTER/ LOG IN</a>
+            </li>
+            {% endif %}
+            <li class="nav-item submit-color">
+                <a class="nav-link nav-font text-white bg-danger font-weight-bold py-3 my-3 px-5" style="margin-right: 10cm;" href="{% url 'new_post' %}">POST </a>
+            </li>
+
+        </div>
+        <form class="form-inline">
+            <div class="input-group">                    
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-append">
+                    <button type="submit" onsubmit="mySearch()" id="myInput" class="btn btn-outline-light bg-primary">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</nav>

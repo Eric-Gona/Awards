@@ -27,7 +27,7 @@ Users can post a project to be rated/viewed.
 + Users can rate/review other users' projects.
 
 ## SETUP/INSTALLATION.
-- Clone this repo: git clone https://github.com/BRIANCHERUIYOT/awads.git.
+- Clone this repo: git clone https://github.com/Eric-Gona/Awards.git
 
 - The repo comes in a zipped or compressed format. Extract to your prefered location and open it.
 
